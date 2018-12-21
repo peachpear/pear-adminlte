@@ -6,7 +6,7 @@ pear让你更畅快地编程。pear-adminlte是以pear-web为基础，增加Admi
 ```
 cd /yourProjectParentPath
 
-composer create-project peachpear/pear-web yourProjectName
+composer create-project peachpear/pear-adminlte yourProjectName
 
 cd /path/yourProjectName/backend/config
 
