@@ -2,7 +2,7 @@
 namespace backend\controllers;
 
 use Yii;
-//use common\logic\user\UserLogic;
+use common\logic\user\UserLogic;
 
 /**
  * 用户管理
