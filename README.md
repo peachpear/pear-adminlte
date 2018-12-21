@@ -1,4 +1,4 @@
-# pear-api
+# pear-adminlte
 pear让你更畅快地编程。pear-adminlte是以pear-web为基础，增加AdminLTE页面，拓展为可直接使用的后台网站。 
 
 ### 使用说明
