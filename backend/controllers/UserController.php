@@ -354,7 +354,7 @@ class UserController extends CommonController
         }
 
         $params['auth_key'] = Yii::$app->security->generateRandomString();
-        $params['password_hash'] = Yii::$app->security->generatePasswordHash( 'pnl135qwe' );
+        $params['password_hash'] = Yii::$app->security->generatePasswordHash( '123456' );
 
         $params['updated_user_id'] = Yii::$app->user->id;
 
