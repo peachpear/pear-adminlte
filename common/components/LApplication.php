@@ -23,13 +23,13 @@ class LApplication extends Application
         $this->initAliases($config);
 
         // 加载配置中心文件，替换config
-        if (!empty($config["ConfigService"])) {
-            $filePath = $config["ConfigService"]["filePath"];
-            $fileExtension = $config["ConfigService"]["fileExt"];
+        if (!empty($config["configService"])) {
+            $filePath = $config["configService"]["filePath"];
+            $fileExtension = $config["configService"]["fileExt"];
             $configService = ConfigService::getInstance($filePath, $fileExtension);
             $configService->loadJson($config);
             $config = ArrayHelper::merge($config, $configService->getConfig());
-            unset($config["ConfigService"]);
+            unset($config["configService"]);
         }
 
         parent::__construct($config);
