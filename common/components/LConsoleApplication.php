@@ -24,14 +24,13 @@ class LConsoleApplication extends Application
         $this->initAliases($config);
 
         // 加载配置中心文件，替换config
-        if (!empty($config["configCenter"]))
-        {
+        if (!empty($config["ConfigService"])) {
             $filePath = $config["ConfigService"]["filePath"];
             $fileExtension = $config["ConfigService"]["fileExt"];
             $configService = ConfigService::getInstance($filePath, $fileExtension);
             $configService->loadJson($config);
             $config = ArrayHelper::merge($config, $configService->getConfig());
-            unset($config["configCenter"]);
+            unset($config["ConfigService"]);
         }
 
         parent::__construct($config);
