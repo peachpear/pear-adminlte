@@ -1,5 +1,5 @@
 # pear-api
-pear让你更畅快地编程。pear-web是以pear-api为基础，增加web必要服务，重构为提供web访问服务的框架。
+pear让你更畅快地编程。pear-adminlte是以pear-web为基础，增加AdminLTE页面，拓展为可直接使用的后台网站。 
 
 ### 使用说明
 
