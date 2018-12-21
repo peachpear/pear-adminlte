@@ -9,9 +9,7 @@ $commonConfig = array(
             'port' => 6379,
             'keyPrefix' => '',
         ],
-        'demoDB'  => [
-            'class' => '\yii\db\Connection',
-            'charset' => 'utf8mb4',
+        'demoDB' => [
             'dsn' => '',
             'username' => '',
             'password' => '',

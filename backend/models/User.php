@@ -15,6 +15,10 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_DELETED = 99;
     const STATUS_ACTIVE = 10;
 
+    public static function getDb()
+    {
+        return yii::$app->demoDB;
+    }
 
     /**
      * {@inheritdoc}

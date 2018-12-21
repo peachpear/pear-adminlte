@@ -13,7 +13,7 @@ class User extends LActiveRecord
 {
     public static function getDb()
     {
-        return yii::$app->db;
+        return yii::$app->demoDB;
     }
 
     public static function tableName()

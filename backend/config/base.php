@@ -3,7 +3,7 @@ return array(
 	'name' => "APP",
 	'id'   => "php-demo",
 	'basePath' => dirname(__DIR__),
-	'defaultRoute' => 'site/index',
+	'defaultRoute' => 'home/index',
     'controllerNamespace' => "backend\controllers",
     'aliases' => [
         '@backend' => realpath(__DIR__."/../"),

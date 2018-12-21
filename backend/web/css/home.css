@@ -1,0 +1,159 @@
+/******   框架界面共用样式    *********/
+html, body {
+    font-size: 12px;
+    font-family: 'Microsoft YaHei','Source Sans Pro','Helvetica Neue','Helvetica','Arial','sans-serif';
+    font-weight: 400;
+}
+
+.treeview > a {
+    font-size: 14px;
+}
+
+.treeview > a > span {
+    font-size: 14px;
+}
+
+.content-header > .header-right-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.content-header > .header-right-btn2 {
+    position: absolute;
+    top: 15px;
+    right: 125px;
+}
+
+.content-header > .header-right-btn3 {
+    position: absolute;
+    top: 15px;
+    right: 235px;
+}
+
+.form-control {
+    box-shadow: none;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+}
+
+.search-box {
+    padding: 10px 0;
+    width: 100%;
+}
+
+.search-box-li {
+    padding-bottom: 6px;
+    width: 100%;
+}
+
+.search-box-li-title {
+    font-size: 12px;
+    color: #777;
+    line-height: 34px;
+    text-align: center;
+}
+
+.search-box-select {
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 10px;
+}
+
+.search-box-text-img {
+    position: absolute;
+    left: 25px;
+    top: 10px;
+}
+
+.search-box-text-area {
+    padding-left: 30px;
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+.search-box-order .sort-type {
+    padding: 0;
+    list-style: none;
+}
+
+.search-box-order .sort-type li {
+    line-height: 20px;
+    border: 1px solid #ddd;
+    padding: 6px 16px 6px 16px;
+    border-radius: 3px;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.search-box-order .sort-type .current {
+    background: #00b7ee;
+    color: white;
+}
+
+.page-lists {
+    padding: 10px 0;
+    width: 100%;
+}
+
+.lists-box {
+    width: 100%;
+}
+
+.pages-box {
+    width: 100%;
+}
+
+
+
+/******   文本样式    *********/
+.text-grey {
+    color: #CCCCCC;
+}
+
+
+
+/******   按钮样式    *********/
+.btn-black{color: #333333;display: inline-block;padding-right: 8px;}
+.btn-black:hover{opacity: 0.6;}
+
+.btn-green{color: #00aa00; display: inline-block;padding-right: 8px;}
+.btn-green:hover{opacity: 0.6;}
+
+.btn-red{color: red; display: inline-block;padding-right: 8px;}
+.btn-red:hover{opacity: 0.6;}
+
+.btn-blue{color: #00b7ee; display: inline-block;padding-right: 8px;}
+.btn-blue:hover{opacity: 0.6;}
+
+.btn-yellow{color: #f39c12; display: inline-block;padding-right: 8px;}
+.btn-yellow:hover{opacity: 0.6;}
+
+
+
+/******   表单样式    *********/
+.input-bottom {
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    width: 96%;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 12px;
+    font-size: 14px;
+}
+
+.textarea-bottom {
+    border: 1px solid #ddd;
+    width: 96%;
+    height: 120px;
+    padding:5px 12px 5px 12px;
+    font-size: 16px;
+}
+
+
+/******   列表样式    *********/
+.page-lists p {
+    margin: 0 0 1px;
+}

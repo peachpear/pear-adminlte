@@ -86,6 +86,6 @@ class LController extends Controller
      */
     public function ajaxSuccess(array $data = [])
     {
-        $this->ajaxReturn(LError::SUCCESS, '', $data);
+        $this->ajaxReturn(LError::SUCCESS, 'ok', $data);
     }
 }

@@ -12,8 +12,7 @@ return array(
 			'class' => 'common\components\LRedisCache',
 			'hashKey' => false,
 		],
-		// db
-        'db' => [
+        'demoDB' => [
             'class' => '\yii\db\Connection',
             'charset' => 'utf8mb4',
             'enableQueryCache' => false,
