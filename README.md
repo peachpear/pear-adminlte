@@ -120,7 +120,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 
 -- ----------------------------
--- Records of user
+-- Records of user   admin/admin
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', '10', 'admin', 'mwrf34kLfW85FVN5X88166bulEhRkzQe', '$2y$13$LDJ4J0rX0YIQX/TcPPilqOzSQb.mhaPC7HjaTef9i0MfrLGwoUQny', null, '超级管理员', '1010', 'admin@demo.com', '10', '1541507292', '0', '1545362198', '1');
 ```
