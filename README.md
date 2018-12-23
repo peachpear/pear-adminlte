@@ -1,6 +1,12 @@
 # pear-adminlte
 pear让你更畅快地编程。pear-adminlte是以pear-web为基础，增加AdminLTE页面，拓展为可直接使用的后台网站。 
 
+### 前提准备
+
+必要服务支持：Mysql、Nginx、php-fpm、Redis、Kafka、RabbitMQ
+
+可选服务支持：Elasticsearch、Kibana、Jenkins
+
 ### 使用说明
 
 ```
