@@ -110,7 +110,7 @@ class UserLogic extends Object
         if ( empty( $params['id'] ) ) {
             // 密码初始化
             $params['auth_key'] = Yii::$app->security->generateRandomString();
-            $params['password_hash'] = Yii::$app->security->generatePasswordHash( 'pnl135qwe' );
+            $params['password_hash'] = Yii::$app->security->generatePasswordHash( '123456' );
         }
 
         return WUserDao::saveUserInfo( $params );
