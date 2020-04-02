@@ -16,11 +16,11 @@ abstract class BaseController extends LController
     /** @var  LHttpRequest */
     public $request;
 
-	public function init()
-	{
-		parent::init();
+    public function init()
+    {
+        parent::init();
 
-		// 写入日志
+        // 写入日志
         $pathInfo = Yii::$app->request->getPathInfo();
         if ( !LLogRequestBlackListService::inBlackList($pathInfo) ) {
             $name = "POST";
@@ -38,14 +38,14 @@ abstract class BaseController extends LController
         }
 
         $this->request = Yii::$app->request;
-	}
+    }
 
     /**
      * 获取用户IP
      * @return null|string
      */
-	protected function getUserIp()
-	{
-		return isset($_SERVER['RAW_REMOTE_ADDR']) ? $_SERVER['RAW_REMOTE_ADDR'] : Yii::$app->request->getUserIP();
-	}
+    protected function getUserIp()
+    {
+        return isset($_SERVER['RAW_REMOTE_ADDR']) ? $_SERVER['RAW_REMOTE_ADDR'] : Yii::$app->request->getUserIP();
+    }
 }

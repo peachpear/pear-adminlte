@@ -9,14 +9,14 @@ use common\misc\LError;
  */
 class LMapiError extends LError
 {
-	// 重写LIB的错误提示信息，适用于MAPI
-	private static $_msg = [];
+    // 重写LIB的错误提示信息，适用于MAPI
+    private static $_msg = [];
 
     /**
      * @return array
      */
-	public static function errorMsg()
-	{
-		return parent::mergeErrorMsg( self::$errMsg, self::$_msg );
-	}
+    public static function errorMsg()
+    {
+        return parent::mergeErrorMsg( self::$errMsg, self::$_msg );
+    }
 }
