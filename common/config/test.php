@@ -9,7 +9,7 @@ $commonConfig = array(
             'port' => 6379,
             'keyPrefix' => '',
         ],
-        'demoDB' => [
+        'demoDB'  => [
             'dsn' => '',
             'username' => '',
             'password' => '',

@@ -7,19 +7,19 @@ return array(
         '@common' => realpath(__DIR__."/../"),
     ],
     'bootstrap' => ['log'],
-	'components' => [
-		'cache' => [
-			'class' => 'common\components\LRedisCache',
-			'hashKey' => false,
-		],
+    'components' => [
+        'cache' => [
+            'class' => 'common\components\LRedisCache',
+            'hashKey' => false,
+        ],
         'demoDB' => [
             'class' => '\yii\db\Connection',
             'charset' => 'utf8mb4',
             'enableQueryCache' => false,
         ],
-		'curl'=> [
-			'class' => 'common\components\LComponentCurl',
-		],
+        'curl'=> [
+            'class' => 'common\components\LComponentCurl',
+        ],
         'kafkaProducer' => [
             "class" =>  'common\components\LKafkaProducerQueue'
         ],
@@ -33,5 +33,5 @@ return array(
                 ],
             ],
         ]
-	]
+    ]
 );

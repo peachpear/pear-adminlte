@@ -23,6 +23,7 @@ class LKafkaTarget extends Target
     }
 
     /**
+     * 日志数据导出
      * Exports log [[messages]] to a specific destination.
      * Child classes must implement this method.
      */

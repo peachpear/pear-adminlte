@@ -33,6 +33,7 @@ class LRabbitQueue extends Component
     }
 
     /**
+     * 尝试多次连接
      * @param int $tryNum
      * @throws \Exception
      */
@@ -69,6 +70,9 @@ class LRabbitQueue extends Component
      * @param $exchange
      * @param $routing
      * @return bool
+     * @throws \AMQPChannelException
+     * @throws \AMQPConnectionException
+     * @throws \AMQPExchangeException
      */
     public function produce($message, $exchange, $routing)
     {

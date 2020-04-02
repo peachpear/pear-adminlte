@@ -10,7 +10,7 @@ use yii\web\Controller;
 use yii\web\Response;
 
 /**
- * Controller基类
+ * Web的Controller基类
  * Class LController
  * @package common\components
  */
