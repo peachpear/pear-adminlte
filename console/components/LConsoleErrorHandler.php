@@ -7,6 +7,7 @@ use Yii;
 use yii\console\ErrorHandler;
 
 /**
+ * 命令行错误处理
  * Class LConsoleErrorHandler
  * @package console\components
  */
@@ -15,25 +16,41 @@ class LConsoleErrorHandler extends ErrorHandler
     public $sendTo;
     public $sendCC;
 
-    public function handleException( $exception )
+    /**
+     * 处理异常
+     * 覆盖父类定义 yii\base\ErrorHandler->handleException()
+     * set_exception_handler([$this, 'handleException']);
+     * @param $exception
+     */
+    public function handleException($exception)
     {
-        $data = $this->formatException( $exception );
-        $this->logException( $exception );
-        // 发邮件
-        if ( YII_DEBUG ) {
-            throw $exception;
-        } else {
-            $this->sendErrorMsg( $data );
-        }
+        // 日志记录错误异常
+        $this->logException($exception);
+
+        // 渲染输出错误异常
+        $this->renderException($exception);
     }
 
+    /**
+     * 处理错误
+     * 覆盖父类定义 yii\base\ErrorHandler->handleError()
+     * set_error_handler([$this, 'handleError']);
+     * @param $code
+     * @param $message
+     * @param $file
+     * @param $line
+     */
     public function handleError($code, $message, $file, $line)
     {
         $exception =  new \ErrorException($message, $code, 1, $file, $line);
-        $this->logException($exception);
-        $this->sendErrorMsg($this->formatException($exception));
+        $this->handleException($exception);
     }
 
+    /**
+     * 处理致命错误
+     * 覆盖父类定义 yii\base\ErrorHandler->handleFatalError()
+     * register_shutdown_function([$this, 'handleFatalError']);
+     */
     public function handleFatalError()
     {
         $error = error_get_last();
@@ -41,19 +58,56 @@ class LConsoleErrorHandler extends ErrorHandler
             $exception = new \ErrorException($error['message'], 500, $error['type'], $error['file'], $error['line']);
             $this->exception = $exception;
 
-//            $this->logException($exception);
+            $this->logException($exception);
 
             if ($this->discardExistingOutput) {
                 $this->clearOutput();
             }
+            $this->renderException($exception);
+
             // need to explicitly flush logs because exit() next will terminate the app immediately
             Yii::getLogger()->flush(true);
-            $this->handleException($exception);
         }
     }
 
     /**
-     * 准备邮件中异常/错误的格式
+     * 渲染输出错误异常
+     * 覆盖父类定义 yii\console\ErrorHandler->renderException()
+     * @param $exception
+     */
+    public function renderException($exception)
+    {
+        $data = $this->formatException($exception);
+
+        // 发邮件
+        if (YII_DEBUG) {
+            throw $exception;
+        } else {
+            $this->sendErrorMsg($data);
+        }
+    }
+
+    /**
+     * 把错误异常信息推入mail队列，发邮件提醒项目负责人
+     * @param $data
+     * @internal param $exception
+     */
+    public function sendErrorMsg($data)
+    {
+        /** @var LRabbitQueue $queue */
+        $queue = Yii::$app->get("queue");
+        $params = [
+            'send_to' => $this->sendTo,
+            'cc_to' => $this->sendCC,
+            'text' => json_encode($data),
+            'title' => "[".ENV.']cli-exception-error',
+            'file' => []
+        ];
+        $queue->produce($params, 'async', 'mail');
+    }
+
+    /**
+     * 格式化异常/错误信息
      * @param $exception
      * @return array
      */
@@ -90,35 +144,5 @@ class LConsoleErrorHandler extends ErrorHandler
             'trace' => $exception->getTraceAsString(),
 //            'traces' => $trace,
         );
-    }
-
-    /**
-     * 发邮件
-     * @param $data
-     * @internal param $exception
-     */
-    public function sendErrorMsg( $data )
-    {
-        /** @var LRabbitQueue $queue */
-        $queue = Yii::$app->get("queue");
-        $params = [
-            'send_to' => $this->sendTo,
-            'cc_to' => $this->sendCC,
-            'text' => json_encode( $data ),
-            'title' => "[".ENV.']cli-exception-error',
-            'file' => []
-        ];
-        $queue->produce($params, 'async', 'mail');
-    }
-
-    /**
-     * 渲染异常输出
-     * 追踪父类可知，这里并不会用到
-     * @param \Exception $exception
-     */
-    public function renderException($exception)
-    {
-        // 本类上面异常处理、程序退出处理其中一个方法删了，这里可用到
-        $this->handleException($exception);
     }
 }

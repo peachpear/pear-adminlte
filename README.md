@@ -1,5 +1,6 @@
 # pear-adminlte
 pear让你更畅快地编程。pear-adminlte是以pear-web为基础，增加AdminLTE页面，拓展为可直接使用的后台网站。 
+支持PHP、MySQL、Redis、Kafka、RabbitMQ。 
 
 ### 前提准备
 
