@@ -131,3 +131,75 @@ CREATE TABLE `user` (
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', '10', 'admin', 'mwrf34kLfW85FVN5X88166bulEhRkzQe', '$2y$13$LDJ4J0rX0YIQX/TcPPilqOzSQb.mhaPC7HjaTef9i0MfrLGwoUQny', null, '超级管理员', '1010', 'admin@demo.com', '10', '1541507292', '0', '1545362198', '1');
 ```
+
+#### 配置中心
+
+配置中心的配置文件demo.json内容可如下：
+```
+{
+  "demo-params":{
+    "grab":[
+      {
+        "grab":{"domain":"http://test.service.demo.com"},
+        "version":"2.0.2"
+      },
+      {
+        "grab":{"domain":"http://dev.service.demo.com"},
+        "version":"*"
+      }
+    ],
+    "path":[
+      {
+        "path":"http://path.demo.com/",
+        "version":"*"
+      }
+    ]
+  },
+  "mysql":{
+    "master":[
+      {
+        "db":"demo",
+        "host":"127.0.0.1",
+        "password":"root",
+        "port":3306,
+        "username":"root",
+        "version":"*"
+      }
+    ]
+  },
+  "redis":{
+    "cache":[
+      {
+        "host":"127.0.0.1",
+        "port":6379,
+        "keyPrefix":"abc.",
+        "version":"*"
+      }
+    ]
+  },
+  "kafka":{
+    "master":[
+      {
+        "brokerList":[
+          {
+            "host":"127.0.0.1",
+            "port":9092
+          }
+        ],
+        "version":"*"
+      }
+    ]
+  },
+  "queue":{
+    "master":[
+      {
+        "host":"127.0.0.1",
+        "login":"mqadmin",
+        "password":"mqadmin",
+        "port":5672,
+        "version":"*"
+      }
+    ]
+  }
+}
+```
