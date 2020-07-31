@@ -24,8 +24,8 @@
         }
     ],
     "require": {
-        "php": ">=7.0.0",
-        "yiisoft/yii2": "~2.0.15",
+        "php": "7.1.*",
+        "yiisoft/yii2": "2.0.34",
         "nmred/kafka-php": "0.2.*",
         "peachpear/pear-leaf": "1.0.*"
     }
