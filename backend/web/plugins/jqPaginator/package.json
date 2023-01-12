@@ -11,7 +11,7 @@
     "grunt-contrib-jasmine": "latest",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-open": "~0.2.2",
     "grunt-reload": "~0.2.0",
     "matchdep": "*"
